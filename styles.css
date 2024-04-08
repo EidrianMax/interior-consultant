@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base */
+:root {
+  /* Colors */
+  --black: #181719;
+  --white: #ffffff;
+  --gray: #828282;
+  --light-gray: #a9a9a9;
+  /* Typography */
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secundary: 'Lora', serif;
+  --font-logo: 'Crimson Pro', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Layout */
+.container {
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+
+.page {
+  padding-block: 1rem;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+}
+
+.page-main {
+  margin-bottom: 10rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .page {
+    padding-top: 2rem;
+  }
+
+  .page-header {
+    margin-bottom: 8rem;
+  }
+}
+
+/* Components */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: 0.875rem;
+  font-weight: 200;
+  border: 2px solid var(--white);
+  padding: 0.5em;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.menu-icon {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.close-icon {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.close-icon-img {
+  width: 35px;
+}
+/* sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  color: var(--white);
+  z-index: 10;
+  display: none;
+}
+
+.sidebar-wrapper {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.sidebar-close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sidebar-item {
+  text-align: center;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: var(--white);
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.sidebar-link.is-active {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.5em;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    display: block;
+    position: static;
+    background-color: transparent;
+    width: auto;
+  }
+
+  .sidebar-list {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .menu-icon,
+  .close-icon {
+    display: none;
+  }
+}
+
+/* hero */
+.hero-title {
+  font-family: var(--font-secundary);
+  font-size: 2.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  font-size: 0.875rem;
+  font-weight: 400;
+  width: 60%;
+  text-wrap: pretty;
+  margin-bottom: 2rem;
+}
+
+.hero-link {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+@media screen and (min-width: 1440px) {
+  .hero {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 1.5rem;
+  }
+
+  .hero-link {
+    font-size: 1.125rem;
+  }
+}
+
+/* portrait */
+.portrait {
+  position: relative;
+}
+
+.portrait-profile-card {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  width: 90%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 1440px) {
+  .portrait-profile-card {
+    width: 50%;
+    left: 40%;
+    transform: initial;
+  }
+}
+
+/* profile-card */
+.profile-card {
+  padding: 1rem 1.5rem;
+  background-color: var(--black);
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-card-photo {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.profile-card-job {
+  color: var(--gray);
+}
+
+.profile-card-title {
+  font-family: var(--font-secundary);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+/* footer */
+.footer {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--light-gray);
+}
+
+.footer-link {
+  color: var(--light-gray);
+  font-weight: 600;
+}
+
+/* Utils */
+.u-show {
+  display: block;
+}
+
+.u-hide {
+  display: none;
+}
